@@ -5,26 +5,20 @@ import "./style.css";
 import "./assets/img/rigo-baby.jpg";
 import "./assets/img/4geeks.ico";
 
+let pronoun = ["the", "our"];
+let adj = ["great", "big"];
+let noun = ["jogger", "racoon"];
+let ext = [".com", ".net"];
+
 window.onload = function() {
-  let excuse =
-    who[rIndex(who)] +
-    action[rIndex(action)] +
-    what[rIndex(what)] +
-    when[rIndex(when)];
-  document.querySelector("#excuse").innerHTML = excuse;
+  for (let i = 0; i < pronoun.length; i++) {
+    for (let j = 0; j < adj.length; j++) {
+      for (let k = 0; k < noun.length; k++) {
+        for (let l = 0; l < ext.length; l++) {
+          document.querySelector("#excuse").innerHTML +=
+            pronoun[i] + adj[j] + noun[k] + ext[l] + "<br>";
+        }
+      }
+    }
+  }
 };
-
-function rIndex(array) {
-  return Math.floor(Math.random() * array.length);
-}
-
-let who = ["The dog ", "My grandma ", "His turtle ", "My bird "];
-let action = ["ate ", "peed ", "crushed ", "broke "];
-let what = ["my homework ", "the keys ", "the car "];
-let when = [
-  "before the class",
-  "right on time",
-  "when I finished",
-  "during my lunch",
-  "while I was praying"
-];
